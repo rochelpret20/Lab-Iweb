@@ -1,23 +1,24 @@
-lab 6:
-
 src/main/java
 │
 ├── beans
-│   └── Employee.java
+│   ├── Mascota.java
+│   ├── Especie.java
+│   ├── Veterinario.java
+│   └── Dueno.java
 │
 ├── daos
-│   └── EmployeeDao.java
+│   ├── DaoBase.java
+│   ├── MascotaDao.java
+│   ├── EspecieDao.java
+│   ├── VeterinarioDao.java
+│   └── DuenoDao.java
 │
 └── servlets
-    └── EmployeeServlet.java
+    └── MascotaServlet.java
 
 src/main/webapp
 │
-├── index.jsp
-│
-└── employee
+└── mascota
     ├── lista.jsp
     ├── form_new.jsp
     └── form_edit.jsp
-
-    
