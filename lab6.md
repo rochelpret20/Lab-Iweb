@@ -1,12 +1,11 @@
 src/main/java
+|--beans
+    -Mascota.java
+    - Especie.java
+    -Veterinario.java
+    -Dueno.java
+|--daos
 
-│
-├── beans
-│   ├── Mascota.java
-│   ├── Especie.java
-│   ├── Veterinario.java
-│   └── Dueno.java
-│
 ├── daos
 │   ├── DaoBase.java
 │   ├── MascotaDao.java
