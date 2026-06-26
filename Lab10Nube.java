@@ -27,6 +27,7 @@ Abre la app Terminal en tu Mac (búscala con Cmd+Space → escribe Terminal).
 =============================================================
 # Mueve la llave a un lugar seguro y dale permisos
 chmod 400 ~/Downloads/quintaola-key.pem
+icalcs C:\Users\TuusarioDownloads\quintaola-key.pem
 
 # Conéctate al servidor
 ==========================================================================
