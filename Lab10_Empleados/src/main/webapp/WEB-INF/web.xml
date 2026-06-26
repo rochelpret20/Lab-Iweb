@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    web.xml — Descriptor de despliegue de la aplicación web
+    =========================================================
+    CÓMO ADAPTAR A OTRO TEMA:
+      Solo cambia el <display-name> con el nombre de tu proyecto.
+      El <welcome-file> "login" debe apuntar al servlet de login
+      (registrado con @WebServlet("/login")).
+    =========================================================
+-->
+
+<web-app
+        xmlns="https://jakarta.ee/xml/ns/jakartaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        https://jakarta.ee/xml/ns/jakartaee
+        https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+        version="6.0">
+
+    <!-- Nombre visible en la consola del servidor -->
+    <display-name>Lab9 Empleados</display-name>
+
+    <!--
+        Página de bienvenida: cuando el usuario accede a la raíz "/"
+        el servidor redirige automáticamente a /login.
+        Funciona porque LoginServlet tiene @WebServlet("/login").
+    -->
+    <welcome-file-list>
+        <welcome-file>login</welcome-file>
+    </welcome-file-list>
+
+</web-app>

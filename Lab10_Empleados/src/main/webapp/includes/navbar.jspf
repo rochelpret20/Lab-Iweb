@@ -1,0 +1,43 @@
+<%-- ============================================================
+     navbar.jspf — Barra de navegación superior
+     ============================================================
+     CÓMO ADAPTAR A OTRO TEMA:
+       1. Cambia "Sistema Empleados" por el nombre de tu app.
+       2. Ajusta los enlaces href según las URLs de tus servlets.
+       3. Cambia los textos de los links (Empleados, Asignaciones).
+     ============================================================ --%>
+
+<nav class="navbar">
+
+    <%-- Nombre del sistema (lado izquierdo) --%>
+    <div>
+        Sistema Empleados
+    </div>
+
+    <%-- Nombre del usuario logueado (centro) --%>
+    <%-- ${sessionScope.usuario.nombre} accede al objeto Usuario guardado en sesión --%>
+    <div>
+        Bienvenido: ${sessionScope.usuario.nombre}
+    </div>
+
+    <%-- Links de navegación (lado derecho) --%>
+    <div>
+
+        <%-- ${pageContext.request.contextPath} agrega el prefijo del war --%>
+        <%-- Si el war se llama "lab9", los links serán /lab9/empleados, etc. --%>
+
+        <a href="${pageContext.request.contextPath}/empleados">
+            Empleados
+        </a>
+
+        <a href="${pageContext.request.contextPath}/asignaciones">
+            Asignaciones
+        </a>
+
+        <a href="${pageContext.request.contextPath}/logout">
+            Cerrar Sesión
+        </a>
+
+    </div>
+
+</nav>

@@ -1,0 +1,98 @@
+<!--
+    pom.xml — Configuración de Maven
+    ===================================
+    CÓMO ADAPTAR A OTRO TEMA:
+      Cambia <artifactId> con el nombre de tu proyecto.
+      Las dependencias raramente necesitan cambios entre laboratorios.
+    ===================================
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="
+         http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Identificadores del proyecto -->
+    <groupId>com.lab</groupId>
+    <artifactId>Lab9_Empleados</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Empaquetado WAR: produce un archivo .war para desplegar en Tomcat -->
+    <packaging>war</packaging>
+
+    <properties>
+        <!-- Java 17: versión LTS recomendada para Jakarta EE 10 -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+
+        <!--
+            Jakarta Servlet API 6.0
+            Proporciona HttpServlet, HttpServletRequest, etc.
+            scope=provided: Tomcat ya la incluye; no la empaquetamos en el WAR.
+        -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--
+            JSTL API: necesario para las etiquetas <c:forEach>, <c:if>, etc.
+            en los JSPs (el taglib uri="http://java.sun.com/jsp/jstl/core")
+        -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <!--
+            Implementación de JSTL (GlassFish/Eclipse):
+            Provee las clases concretas que ejecutan las etiquetas JSTL.
+        -->
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+        <!--
+            Driver JDBC para MySQL 8.x
+            Permite conectarse a la base de datos MySQL desde Java.
+            Se empaqueta DENTRO del WAR (no scope=provided).
+        -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.4.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--
+                Plugin WAR de Maven: genera el archivo .war durante "mvn package".
+                failOnMissingWebXml=false permite proyectos sin web.xml explícito,
+                aunque en este proyecto sí tenemos web.xml.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
