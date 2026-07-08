@@ -68,7 +68,7 @@ Paso 6 — Subir tu SQL al servidor
 Abre una Terminal NUEVA en tu Mac (no cierres la del servidor). Navega a donde está tu SQL y súbelo:
 ======================================================================================================================
 //Para Mac:
-scp -i ~/Downloads/quintaola-key.pem ~/ruta/a/quintaola_inventario_schema.sql ubuntu@TU_IP_PUBLICA:/home/ubuntu/
+scp -i ~/Downloads/quintaola-key.pem ~/Downloads/quintaola_inventario_schema.sql ubuntu@TU_IP_PUBLICA:/home/ubuntu/
 //Para Windows:
 scp -i C:\Users\TuUsuario\Downloads\quintaola-key.pem C:\ruta\al\quintaola_inventario_schema.sql ubuntu@TU_IP_PUBLICA:/home/ubuntu/
 ======================================================================================================================
@@ -96,7 +96,7 @@ Paso 8 — Subir el WAR al servidor
 En una Terminal nueva:
 =====================================================================================================
 //Para Mac:
-scp -i ~/Downloads/quintaola-key.pem ~/ruta/al/target/quinta-ola-1.0-SNAPSHOT.war ubuntu@TU_IP_PUBLICA:/home/ubuntu/
+scp -i ~/Downloads/quintaola-key.pem ~/Downloads/QuintaOla-completo/target/quinta-ola-1.0-SNAPSHOT.war ubuntu@TU_IP_PUBLICA:/home/ubuntu/
 //Para windows
 scp -i C:\Users\TuUsuario\Downloads\quintaola-key.pem C:\ruta\al\target\quinta-ola-1.0-SNAPSHOT.war ubuntu@TU_IP_PUBLICA:/home/ubuntu/
 =====================================================================================================
