@@ -33,6 +33,10 @@ icalcs C:\Users\TuusarioDownloads\quintaola-key.pem
 ==========================================================================
 //Para Mac:
 ssh -i ~/Downloads/quintaola-key.pem ubuntu@TU_IP_PUBLICA
+
+//comado:}
+curl -4 ifconfig.me
+  
 //Para Windows:
 ssh -i C:\Users\TuUsuario\Downloads\quintaola-key.pem ubuntu@TU_IP_PUBLICA
 ==========================================================================
@@ -69,6 +73,8 @@ Abre una Terminal NUEVA en tu Mac (no cierres la del servidor). Navega a donde e
 ======================================================================================================================
 //Para Mac:
 scp -i ~/Downloads/quintaola-key.pem ~/Downloads/quintaola_inventario_schema.sql ubuntu@TU_IP_PUBLICA:/home/ubuntu/
+//o si no funciona:
+scp -i ~/Downloads/quintaola-key.pem ~/Downloads/QuintaOla-completo/target/quinta-ola-1.0-SNAPSHOT.war ubuntu@54.164.81.9:/home/ubuntu/
 //Para Windows:
 scp -i C:\Users\TuUsuario\Downloads\quintaola-key.pem C:\ruta\al\quintaola_inventario_schema.sql ubuntu@TU_IP_PUBLICA:/home/ubuntu/
 ======================================================================================================================
